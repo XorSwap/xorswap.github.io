@@ -1,4 +1,9 @@
+@font-face {
+	font-family: FixedSys;
+	src: url('fixedsys.ttf');
+}
 body {
+	font-family: FixedSys;
 	color: white;
 	background-color: black;
 }
