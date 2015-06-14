@@ -1,6 +1,6 @@
 @font-face {
 	font-family: FixedSys;
-	font-weight: bold;
+	font-weight: bold;/**/
 	src: url('fixedsys.ttf');
 }
 body {
