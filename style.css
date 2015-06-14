@@ -10,4 +10,5 @@ body {
 }
 a {
 	color: #FFFF55; /* yellowish */
+	text-decoration: none;
 }
