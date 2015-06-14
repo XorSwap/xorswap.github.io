@@ -1,0 +1,23 @@
+.menu
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	float:left;
+}
+a:link.menu,a:visited.menu
+{
+	display:block;
+	font-weight:bold; 
+	color:black;
+	background-color:white;
+	text-align:center;
+	padding:5px; 
+	text-decoration:none;
+	text-transform:uppercase;
+}
+a:hover.menu,a:active.menu
+{
+	background-color:grey;
+}

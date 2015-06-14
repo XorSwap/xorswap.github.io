@@ -1,0 +1,135 @@
+(\b. b (b ((\c. c c) (\c. \d. \e. e (\f. \g. g) ((\f. c c f ((\g. g g) (\g. f (g g)))) (\f. \g. \h. \i. i g (h (d f))))) (\c. \d. \e. b (e c))))) (\b. \c. c (\d. \e. d) b)
+
+(\b.b(b((\c.c c)(\c.\d.\e.e(\f.\g.g)((\f.c c f((\g.g g)(\g.f(g g))))(\f.\g.\h.\i.i g(h(d f)))))(\c.\d.\e.b(e c)))))(\b.\c.c(\d.\e.d)b)
+
+(S I (S I (S (K (S I I (S (K (S (K (S (S I (K (K I))))))) (S (K (S (K K))) (S (S (K S) (S (K K) (S (S (K S) (S I I)) (K (S (K (S I I)) (S (S (K S) K) (K (S I I)))))))) (K (S (K (S (K (S (S (K S) (S (K K) (S (K S) (S (K (S I)) K)))))))) (S (K (S (K K))) (S (K (S (K (S (K K))))) (S (K (S (K (S I)))) (S (K K)))))))))))) (S (K (S (K K))) (S (S (K S) (S (K K) (S (K S) K))) (K (S (K (S I)) K)))))) (S (K (S (S I (K K)))) K))
+
+SI(SI(S(K(SII(S(K(S(K(S(SI(K(KI)))))))(S(K(S(KK)))(S(S(KS)(S(KK)(S(S(KS)(SII))(K(S(K(SII))(S(S(KS)K)(K(SII))))))))(K(S(K(S(K(S(S(KS)(S(KK)(S(KS)(S(K(SI))K))))))))(S(K(S(KK)))(S(K(S(K(S(KK)))))(S(K(S(K(SI))))(S(KK))))))))))))(S(K(S(KK)))(S(S(KS)(S(KK)(S(KS)K)))(K(S(K(SI))K))))))(S(K(S(SI(KK))))K)
+
+[S,I,[S,I,[S,[K,[S,I,I,[S,[K,[S,[K,[S,[S,I,[K,[K,I]]]]]]],[S,[K,[S,[K,K]]][S,[S,[K,S],[S,[K,K],[S,[S,[K,S],[S,I,I]],[K,[S,[K,[S,I,I]],[S,[S,[K,S],K],[K,[S,I,I]]]]]]]],[K,[S,[K,[S,[K,[S,[S,[K,S],[S,[K,K],[S,[K,S],[S,[K,[S,I]],K]]]]]]]],[S,[K,[S,[K,K]]],[S,[K,[S,[K,[S,[K,K]]]]],[S,[K,[S,[K,[S,I]]]],[S,[K,K]]]]]]]]]]]],[S,[K,[S,[K,K]]],[S,[S,[K,S],[S,[K,K],[S,[K,S],K]]],[K,[S,[K,[S,I]],K]]]]]],[S,[K,[S,[S,I,[K,K]]]],K]]
+
+```si``si``s`k```sii``s`k`s`k`s``si`k`ki``s`k`s`kk``s``s`ks``s`kk``s``s`ks``sii`k``s`k``sii``s``s`ksk`k``sii`k``s`k`s`k`s``s`ks``s`kk``s`ks``s`k`sik``s`k`s`kk``s`k`s`k`s`kk``s`k`s`k`si`s`kk``s`k`s`kk``s``s`ks``s`kk``s`ksk`k``s`k`sik``s`k`s``si`kkk
+
+((:)~*(~)*a(~*(~^)*)*)()~^((:)~*(~)*a(~*(~^)*)*)()~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)()~^()~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)()~^(a(!)~*)(a(!)~*)()~^~^~^~^~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^~^~^((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^((:)~*(~)*a(~*(~^)*)*)()~^()~^~^~^(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)()~^()~^~^~^((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^(a(!)~*)~^~^(a(!)~*)((:)~*(~)*a(~*(~^)*)*)()~^()~^~^~^~^~^~^~^~^~^(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)()~^~^~^(a(!)~*)~^~^~^~^~^~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)()~^~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^~^~^~^~^~^~^~^~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^~^~^((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)(a(!)~*)~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)~^~^(a(!)~*)~^~^~^~^(a(!)~*)((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)()~^~^~^(a(!)~*)~^~^~^~^~^~^~^((:)~*(~)*a(~*(~^)*)*)(a(!)~*)((:)~*(~)*a(~*(~^)*)*)((:)~*(~)*a(~*(~^)*)*)()~^(a(!)~*)(a(!)~*)~^~^~^~^~^(a(!)~*)~^~^
+
+head (n tail p)
+(n) (/p.p (/a./b.b)) p true
+```
+``s``s`ksk
+``s``s`ksk
+`ki``si`k`ki
+```si``si``s`k```sii``s`k`s`k`s``si`k`ki``s`k`s`kk``s``s`ks``s`kk``s``s`ks``sii`k``s`k``sii``s``s`ksk`k``sii`k``s`k`s`k`s``s`ks``s`kk``s`ks``s`k`sik``s`k`s`kk``s`k`s`k`s`kk``s`k`s`k`si`s`kk``s`k`s`kk``s``s`ks``s`kk``s`ksk`k``s`k`sik``s`k`s``si`kkk
+k
+
+let
+Tr=\a.\b.a;
+Fl=\a.\b.b;
+U=\f.f f;
+Yr=\f.U(\g.f(g g));
+C0=\b.\c.c Fl b;
+C1=\b.\c.\d.\e.b(e c);
+C4=\c.\f.c c f(Yr f);
+C5=\d.\f.\g.\h.\i.i g(h(d f));
+C2=\c.\d.\e.e Tr(C4 c(C5 d));
+C3=\b.b(b(U C2(C1 b)));
+in
+C3 C0
+
+True a b = a;
+False a b = b;
+A f = f f;
+B f = A (C f);
+C f g = f (g g);
+D b c = c False b;
+E b c d e = b (e c);
+F c f = c c f(B f);
+G d f g h i = i g (h (d f));
+H c d e = e True (F c (G d));
+I b = b (b (A H (E b)));
+Primes = I D
+
+True a b = a;
+False a b = b;
+C f g = f (g g);
+D b c = c False b;
+E b c d e = b (e c);
+F c f = c c f(C f (C f));
+G d f g h i = i g (h (d f));
+H c d e = e True (F c (G d));
+Primes = D (D (H H (E D)));
+
+let
+True = \a. \b. a;
+False = \a. \b. b;
+C = \f. \g. f (g g);
+D = \b. \c. c False b;
+E = \b. \c. \d. \e. b (e c);
+F = \c. \f. c c f(C f (C f));
+G = \d. \f. \g. \h. \i. i g (h (d f));
+H = \c. \d. \e. e True (F c (G d));
+Primes = D (D (H H (E D)));
+in
+Primes
+
+let
+True = K;
+False = K I;
+C = \f. S (K f) (S I I);
+D = \b. \c. c False b;
+E = \b. \c. \d. \e. b (e c);
+F = \c. \f. c c f(C f (C f));
+G = \d. \f. \g. \h. \i. i g (h (d f));
+H = \c. \d. \e. e True (F c (G d));
+Primes = D (D (H H (E D)));
+in
+Primes
+
+CA a = a (a (CC (CD a) (CE a)));
+CB a b = b CF a;
+CC a = a a;
+CD a b c d = d CG ((CH b) (CI c));
+CE a b c d = a (d b);
+CF a b = a;
+CG a b = b;
+CH a b = a a b (CC (CJ b));
+CI a b d e f = f d (e (a b));
+CJ a b = a (b b);
+Main = CA CB
+
+let
+CA = \a.a (a (CC (CD a) (CE a)));
+CB = \a b.b CF a;
+CC = \a.a a;
+CD = \a b c d.d CG ((CH b) (CI c));
+CE = \a b c d.a (d b);
+CF = \a b.a;
+CG = \a b.b;
+CH = \a b.a a b (CC (CJ b));
+CI = \a b d e f.f d (e (a b));
+CJ = \a b.a (b b);
+in
+CA CB
+
+let
+CC = \a.a a;
+CG = \a b.b;
+CJ = \a b.a (b b);
+CH = \a b.a a b (CC (CJ b));
+CI = \a b d e f.f d (e (a b));
+CD = \a b c d.d CG ((CH b) (CI c));
+CE = \a b c d.a (d b);
+CA = \a.a (a (CC (CD a) (CE a)));
+CF = \a b.a;
+CB = \a b.b CF a;
+in
+CA CB
+
+P=(\b. b (b ((\c. c c) (\c. \d. \e. e (\f. \g. g) ((\f. c c f ((\g. g g) (\g. f (g g)))) (\f. \g. \h. \i. i g (h (d f))))) (\c. \d. \e. b (e c))))) (\b. \c. c (\d. \e. d) b)
+
+let
+primes=(\b.b(b((\c.c c)(\c.\d.\e.e(\f.\g.g)((\f.c c f((\g.g g)(\g.f(g g))))(\f.\g.\h.\i.i g(h(d f)))))(\c.\d.\e.b(e c)))))(\b.\c.c(\d.\e.d)b);
+head = \p.p (\a.\b.a);
+tail = \p.p (\a.\b.b);
+n = \f.\x.f(f(f(f(f(x)))));
+in
+head (n tail primes) false true

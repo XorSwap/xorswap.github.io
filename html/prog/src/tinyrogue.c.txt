@@ -1,0 +1,41 @@
+/*
+ * A simple Roguelike game in C
+ * Use WASD to move, and find the chalice to win.
+ *
+ * Compile with -Dw=<desired dungeon width> -Dh=<desired dungeon height>
+ *
+ * NOTE: This program uses the getch()
+ * function.  This WILL NOT RUN
+ * under anything but Windows.
+ *
+ * Legend:
+ * # - Wall
+ * % - Monster
+ * @ - You
+ * ] - Health Bar
+ * > - Stairway Down
+ * < - Stairway Up
+ * Y - The Chalice
+ */
+
+#define r x[_][y]
+#define p _[a+x][b+y]
+#define q c[_][d]
+#define G goto
+#define I if
+#define R rand()
+#define C getch()
+#define S system("cls")
+#define F(x,y) for(x=0;x<y;x++)
+#define f F(y,h){F(x,w)
+#define M(X,Y) _[c+X][d+Y]==46||_[c+X][d+Y]==37||_[c+X][d+Y]==60||_[c+X][d+Y]==62||_[c+X][d+Y]==89
+main(){static int e=w;char z=R%9+1,t,a,b,x,y,c,d,j,k,_[w][h];
+srand(time(0));f r=35;}F(t,120){a=R%w;b=R%h;c=R%w;d=R%h;f I(x<
+a&&x>c&&y<b&&y>d&&R%10>1)r=46;}}f I(r==46)G*(_[x][y-1]=60,c=x,
+d=y,&&b);}b:x=R%w;y=R%h;I(r==46)r=z?62:(z=0,89);I(R%6)G b;l:f{
+r=(R%200||r^46)?r:37;I(r==37){a=R%3-1;b=R%3-1;I(x+a==c&&y+b==d
+)e--;I(p==46)r=p,p=37;}}}I(q==89)exit(1);I(q==62)main(e);I(q==
+60&&e^w)return;I(R&2&&q==37)q=46;S;f putchar((x==c&&y==d)?64:
+r);puts("");}I(e<1)exit(0);F(a,e)putchar(93);i:a=C;j=(a==97)?-
+1:(a==100)?1:0;k=(a==119)?-1:(a==115)?1:0;G*(j&&(M(j,0)))?((c\
++=j),&&l):(k&&(M(0,k)))?((d+=k),&&l):&&i;}

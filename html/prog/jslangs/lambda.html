@@ -1,0 +1,64 @@
+<html>
+<head>
+<script type="text/javascript">
+function LAMBDA(I,_,O)
+{
+	for(i=0;i<I.length;i++)
+	{
+		t=I[i];
+		if(t=='(')
+		{
+			v=i;
+			q=0;
+			do
+			{
+				if(I[i]=='(')
+					q++;
+				if(I[i]==')')
+					q--;
+				i++;
+			}while(q>0);
+			i--;
+			O("'(' encountered, pushing '"+I.slice(v+1,i)+"' (ip="+i+")");
+			_.push(I.slice(v+1,i));
+		}
+		if(t=='[')
+		{
+			v=i;
+			q=0;
+			do
+			{
+				if(I[i]=='[')
+					q++;
+				if(I[i]==']')
+					q--;
+				i++;
+			}while(q>0);
+			Q=I.slice(v+1,i-1);
+			O("'[' encountered, running '/"+Q[0]+"."+Q.slice(1,Q.length+1)+"'.");
+			D=Q.slice(1,Q.length+1).split(Q[0]).join(_.pop());
+			O("after: "+D);
+			_.push(D);
+		}
+	}
+	O("Done!  "+_.join(','));
+	if(_.length>0)
+	{
+		I=_.pop();
+		O("Restarting with '"+I+"'");
+		LAMBDA(I,_,O);
+	}
+}
+function go()
+{
+	document.getElementById("out").innerHTML="";
+	LAMBDA(document.getElementById("in").value,[],function(_){document.getElementById("out").innerHTML+=_+"<br/>";});
+}
+</script>
+</head>
+<body>
+<textarea id="in"></textarea><br/>
+<button OnClick="go();">RUN</button>
+<div id="out"></div>
+</body>
+</html>

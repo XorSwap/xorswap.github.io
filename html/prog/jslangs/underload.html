@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>Underload</title>
+<script type="text/javascript">
+_=[];
+R=[];
+function U(P,O){eval("for(i=0;i<P.length;i++)C:')?(AX=B),AX)):Ca')?(A'('+B+')')):CS')?(O(B)):C!')?(B):C*')?(X=B,Y=B,AY+X)):C~')?(X=B,Y=B,AX),AY)):C^')?(R.push(i),U(B,O),i=R.pop()):C(')?((function(){d=i,c=0;doC(')?c++:C)')?c--:0)),i++;while(c);i--;AP.slice(d+1,i));})()):0))))))));".replace(/A/g,"_.push(").replace(/B/g,"_.pop()").replace(/C/g,"((P[i]=='"));}
+function go()
+{
+	document.getElementById("out").value="";
+	U(document.getElementById("in").value,
+	function(_)
+	{
+		document.getElementById("out").value+=_;
+	});
+}
+</script>
+</head>
+<body>
+<!--#include virtual="/menu.html" -->
+<h1>Underload</h1>
+<textarea id="in"></textarea><br/>
+<button OnClick="go();">RUN</button><br/>
+<textarea id="out"></textarea><br/>
+</body>
+</html>

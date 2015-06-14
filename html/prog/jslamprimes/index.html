@@ -1,0 +1,121 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>A Completely Insane Prime 'Printer' in Javascript</title>
+</head>
+<body>
+<!-- MENU --><iframe src="/menu.html" width="100%" height="50" frameBorder="0" scrolling="no">Your browser does not support iframes!<br/><a href="/menu.html">MENU</a></iframe>
+<h1>A Completely Insane Prime 'Printer' in Javascript</h1>
+<code>
+_='p=6f){$ d(3*%*%7/b93&lt;#2%!3*&amp;%3/b+a%3:a9*%/b--}-9&lt;!d!e#e(+c&gt;d(%:b-4}4%7!&lt;*&gt;2+b4---.a7#b(%?+a&amp;- $ e(?$ 2a7
+!:b&amp;for(5g=2c.a7&lt;:c%/c488;;){5h=2d8;f(22h&gt;0})&gt;1}+));5d=2d+2e+g)),k=d(),d=6#k}}};!#6#){return $function%+6&amp;-}}*#a(
++)(-)}.(6!/#b(+2c(3!a4-&amp;}5var 6$(7!b8+e)9-.b:*+&lt;!c&gt;%#?3!*&amp;';for(Y in $='?&gt;&lt;:98765432/.-+*&amp;%$#!')with(_.spl
+it($[Y]))_=join(pop());eval(_)
+</code>
+<p>
+"Man!" I can hear you say, "What kind of Javascript is that?  Does it actually work? Does it--" Yes, it does work.  What this crazy piece of code does is set a global variable called <code>p</code> to a function, which takes another function as a parameter, and calls it repeatedly on either 1 or 0, depending on weather the current number is prime or not.  You might find that a bit hard to understand, so let me make this clearer:
+</p>
+<pre>
+p(whatever_function);
+causes:
+whatever_function(0); // 0 is not prime
+whatever_function(0); // 1 is not prime
+whatever_function(1); // 2 is prime
+whatever_function(1); // 3 is prime
+whatever_function(0); // 4 is not prime
+whatever_function(1); // 5 is prime
+whatever_function(0); // 6 is not prime
+whatever_function(1); // 7 is prime
+etc.
+</pre>
+<p>
+You can try the code (<code>p(alert);</code>) <a href="demo.html">here</a>.
+</p>
+<h1>What's going on here?</h1>
+<p>
+This code is <b>very</b> unusual, for many reasons.  One of which is it being compressed with <a href="http://www.iteral.com/jscrush/">JSCrush</a>.  Actually, that's not quite true: JSCrush likes to output code with a lot of unprintable characters stuck in it, and I didn't like that, so I made a slightly modified version that uses only printable characters.  Anyways, change the <code>eval</code> to an <code>alert</code>, and the code will output the following:
+</p>
+<pre>
+p=function(f){function d(){return function(a){return a()(function(){return a()(funct
+ion(){return function(b){return b()(b)}(function(){return function(b){return functio
+n(a){return function(c){return c()(function(){return function(){return function(a){r
+eturn a()}}})(function(){return function(a){return b()(b)(a)(function(){return funct
+ion(a){return a()(a)}(function(){return function(b){return a()(function(){return b()
+(b)})}})})}(function(){return function(b){return function(c){return function(d){retu
+rn function(e){return e()(c)(function(){return d()(function(){return a()(b)})})}}}}}
+)})}}}})(function(){return function(b){return function(){return function(c){return a
+()(function(){return c()(b)})}}}})})})}(function(){return function(a){return functio
+n(b){return b()(function(){return function(a){return function(){return a()}}})(a)}}}
+)} function e(){return function(a){return function(){return a()}}}function c(a){retu
+rn function(b){return function(){return a()(b)}}}for(var g=c(c(function(){return fun
+ction(a){return function(b){return function(c){return a()(c)(function(){return b()(c
+)})}}}})(e))(e);;){var h=c(d)(e);f(c(c(h)(function(){return 0}))(function(){return 1
+})());var d=c(d)(c(e)(g)),k=d(),d=function(){return k}}};
+</pre>
+<p>
+"Wow!" You say again, "That code's waaaaaaay bigger!", yes, young grasshopper, JSCrush is amazing.  Wait, what does that code do?  Well, let's look at the non-minified version:
+</p>
+<pre>
+p = function(out)
+{
+	var app = function(a)
+	{
+		return function(b)
+		{
+			return function()
+			{
+				return a()(b);
+			};
+		};
+	};
+	var S = function()
+	{
+		return function(x)
+		{
+			return function(y)
+			{
+				return function(z)
+				{
+					return x()(z)(function()
+					{
+						return y()(z);
+					});
+				};
+			};
+		};
+	};
+	var K = function()
+	{
+		return function(x)
+		{
+			return function(y)
+			{
+				return x();
+			};
+		};
+	};
+	var I = app(app(S)(K))(K);
+	var t = function(){return function(b){return b()(function(){return b()(function(){return function(a){return a()(a)}(function(){return function(a){return function(b){return function(c){return c()(function(){return function(){return function(a){return a()}}})(function(){return function(b){return a()(a)(b)(function(){return function(a){return a()(a)}(function(){return function(a){return b()(function(){return a()(a)})}})})}(function(){return function(a){return function(c){return function(e){return function(f){return f()(c)(function(){return e()(function(){return b()(a)})})}}}}})})}}}})(function(){return function(a){return function(){return function(d){return b()(function(){return d()(a)})}}}})})})}(function(){return function(b){return function(a){return a()(function(){return function(a){return function(){return a()}}})(b)}}})};
+	while(true) {
+		var h = app(t)(K);
+		out(app(app(h)(function()
+		{
+			return 0;
+		}))(function()
+		{
+			return 1;
+		})());
+		t = app(t)(app(K)(I));
+		var q = t();
+		t = function()
+		{
+			return q;
+		};
+	}
+};
+</pre>
+<p>
+The code is 
+</p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/*
+
+	Well, you crazy hacker, you,
+	You've discovered my CSS
+	file!  I feel like I should
+	reward this somehow...
+
+	Hey look!  It's the shortest
+	possible C program!
+
+	main;
+
+	I wonder what that could
+	do...
+
+*/
+.menu
+{
+	background-color:lightblue;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+.centered
+{
+	width:400px;
+	height:600px;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+}

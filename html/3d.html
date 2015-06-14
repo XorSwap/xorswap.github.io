@@ -1,0 +1,54 @@
+<html><body><canvas width="400" height="400"></canvas><script>
+u=200;
+z=Math.sin;
+y=Math.cos;
+c=document.body.childNodes[0];
+f=c.getContext("2d");
+w=50;
+x=-50;
+l="wxwwww;wwxwww;wwwxww;xxwxww;xwxxww;xxwwxw;wxxwxw;xxxxxw;xwxwwx;wxxwwx;xxxxwx;xxxwxx".split(";").map(function(_){return _.split("").map(eval)});
+n=0;
+setInterval(function()
+{
+	f.clearRect(0,0,c.width,c.height);
+	for(a=l.length;a--;)
+		e=l[a],
+		b=e[2],
+		d=u*e[0]/(b+u),
+		h=u*e[1]/(b+u),
+		k=e[5],
+		b=u*e[3]/(k+u),
+		e=u*e[4]/(k+u),
+		d+=u,
+		h+=u,
+		b+=u,
+		e+=u,
+		f.beginPath(),
+		f.moveTo(d,h),
+		f.lineTo(b,e),
+		f.stroke();
+	d=z(n);
+	for(a=l.length;a--;)
+		Y=z(d/99)*l[a][0]+y(d/99)*l[a][2],
+		
+		l[a][0]=y(d/99)*l[a][0]-z(d/99)*l[a][2],
+		l[a][2]=Y,
+		
+		Y=z(d/99)*l[a][3]+y(d/99)*l[a][5],
+		
+		l[a][3]=y(d/99)*l[a][3]-z(d/99)*l[a][5],
+		l[a][5]=Y;
+	d=y(n);
+	for(a=l.length;a--;)
+		Y=z(d/99)*l[a][1]+y(d/99)*l[a][2],
+		
+		l[a][1]=y(d/99)*l[a][1]-z(d/99)*l[a][2],
+		l[a][2]=Y,
+		
+		Y=z(d/99)*l[a][4]+y(d/99)*l[a][5],
+		
+		l[a][4]=y(d/99)*l[a][4]-z(d/99)*l[a][5],
+		l[a][5]=Y;
+	n+=.01
+},9)
+</script></body></html>

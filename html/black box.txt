@@ -1,0 +1,74 @@
+BLACK BOX
+
+The universe.
+It makes up everything, it is everything.
+It is immensely complex, yet organized so simply.
+Throughout all of it runs a common thread of existence, a simple pattern describing an immensely (infinitely?) complex data set.
+Some may be familiar with it: it is the BLACK BOX.
+
+What is a black box?
+I'm glad you asked.
+A black box is created by grouping a set of things together, and giving a name to the set.
+The contents of the box no longer matter, just the name, and the name's purpose.
+Example given:
+	atoms.
+	What, to a biologist is an atom?
+	It's a fundamental object, cannot be divided further: it is atomic (hence the name), it interacts with other atoms in a given way, it makes up other, larger, things.
+	What, to a chemist is an atom?
+	Here's where things get interesting: to a chemist, an atom is NOT a fundamental object, not atomic (picture that, an atom, not atomic!).
+	An atom is made up of protons, electrons, and probably neutrons (lookin' at you, hydrogen).
+	An atom is a BLACK BOX: a name given to a collection of other things; it has a behaviour, and, as long as the how and why of what it does are ignored, it's innards aren't needed.
+	What's in the box doesn't matter; all that is needed is the BLACK BOX itself.
+
+The second epiphany comes readily from the application of the previous one to itself: each BLACK BOX is nothing but a collection of more BLACK BOXES.
+Picture your own body, for a sec:
+	a body,
+	made of organs,
+	made of tissues,
+	made of cells,
+	made of molecules (switch to chemistry),
+	made of atoms,
+	made of particles (switch to physics),
+	made of... what?
+	We'll get to that.
+Try that again, but go outwards:
+	a body,
+	in a building (maybe?),
+	in a city,
+	in a province, state, whatever,
+	in a country,
+	in a continent,
+	on earth,
+	in our solar system,
+	in the Milky Way,
+	in... what?
+Remember the thing we were going to get to?  This is it.
+
+The trouble with this BLACK BOX organization of the universe is that there's no end to it!
+Getting more and more nested, there's got to be some kind of end, it can't go on forever!
+Atoms used to be thought of as the 'end' of this nesting, indivisible, the fundamental objects of the universe.
+Wait, that's not right!
+Atoms are made out of protons, neutrons, and electrons!
+Wait, that's not right either!
+Each of those is made up of some other BLACK BOX, and those of more!
+We keep thinking we've hit the end, then extending it when we find we haven't.
+Going the other way, our tree of BLACK BOXES seems to have a common 'trunk': the whole observable universe!
+Which is getting bigger at the speed of light in all directions.
+Hmmm...
+There's also the matter of the unobservable universe.
+Are we a bubble of space(-time?), hidden in the depths of a multiverse?
+Is the multiverse nested in anything else?
+Both extremes lead directly to philosophy.
+Let's follow.
+
+Everything nests into a hierarchy, fits in somewhere.
+Everything we inhabit is made of endless groups of BLACK BOXES, defined in terms of what, themselves?
+Here's where everything leads: nowhere, nothing, VOID.
+The BLACK BOXES are made of nothing.
+Nothing is, rather cryptically, not nothing (Remember the non-atomic atoms?  Maybe there's a pattern!).
+Nothing still embodies the laws of physics, a set of rules that describe how the universe 'runs' (yet they don't run it!).
+Everything is created out of BLACK BOXES and VOID.
+Nothing that's still something, bunched up into groups, those groups into groups, bunched, grouped, into everything there is.
+Not null and void, but BOX and VOID.
+The universe.
+BLACK BOXES and VOID.

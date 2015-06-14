@@ -1,0 +1,148 @@
+#!/usr/bin/env python2.7
+'''
+This file is part of FRACTRAIN, a FRACTRAN interpreter.
+
+FRACTRAIN is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FRACTRAIN is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FRACTRAIN.  If not, see <http://www.gnu.org/licenses/>.
+
+Copyright 2013
+'''
+try:
+	import readline
+except ImportError:
+	pass
+import argparse
+def evaluate(P,I):
+	while not I == None:
+		yield I
+		I=next(I*m/d for m,d in P if not I*m%d)
+def parse(I):
+	import re
+	I.replace(' ',"")
+	if re.match(r"[0-9]+\([0-9]+/[0-9]+(,[0-9]+/[0-9]+)*\)",I):
+		I=I.partition('(')
+		P=map(lambda x:(int(x.split('/')[0]),int(x.split('/')[1])),I[2][:-1].split(','))
+		return (int(I[0]),P)
+	else:
+		raise Exception("Syntax")
+def factor(n):
+	O=[]
+	i=2
+	while n>1:
+		if n%i==0:
+			O.append(i);
+			n/=i;
+		else:
+			i+=1
+	return O
+def print_factors(I):
+	I=factor(I)
+	dups={}
+	for n in I:
+		if n in dups:
+			dups[n]+=1
+		else:
+			dups[n]=1
+	O=' * '.join(map(lambda x:str(x[0])+'^'+str(x[1]),dups.items()))
+	return (args.powers and len(dups) == 1 and any(map(lambda x:x[0]==x[1],zip([x for x,y in dups.iteritems()],map(int,args.powers[0].split(',')))))),O
+def execute(I):
+	try:
+		I=parse(I)
+		for _ in evaluate(I[1],I[0]):
+			R = _
+			O = print_factors(_)
+			if args.verbose or O[0]:
+				print _,( ('('+O[1]+')') if args.factor else "" )
+		if not args.verbose:
+			print R,( ('('+O[1]+')') if args.factor else "" )
+	except Exception as e:
+		print "Error: "+str(e)
+argParser = argparse.ArgumentParser(description='FRACTRAIN, a FRACTRAN Interpreter.')
+argParser.add_argument(
+	'-v',
+	'--verbose',
+	help='print value of accumulator at each step',
+	action='store_true'
+)
+argParser.add_argument(
+	'-f',
+	'--factor',
+	help="print the prime factors of the accumulator",
+	action="store_true"
+)
+argParser.add_argument(
+	'-x',
+	'--exit',
+	help="exit program without running the interpreter",
+	action="store_true"
+)
+argParser.add_argument(
+	'-r',
+	'--run',
+	help='run program from file(s)',
+	metavar='file',
+	dest='files',
+	default=[],
+	nargs='+'
+)
+argParser.add_argument(
+	'-e',
+	'--execute',
+	help='execute program from command line',
+	dest='prog',
+	metavar='prog',
+	nargs=1
+)
+argParser.add_argument(
+	'-p',
+	'--print',
+	help="print powers of number",
+	dest='powers',
+	metavar='powers',
+	default="",
+	nargs=1
+)
+args = argParser.parse_args()
+if __name__=="__main__":
+	for file in args.files:
+		try:
+			print "Running",file
+			for line in open(file):
+				line = line.strip()
+				if line:
+					try:
+						print "Evaluating",line
+						execute(line)
+					except (KeyboardInterrupt,EOFError):
+						print "\nOn to the next line..."
+		except (IOError,Exception):
+			print "Error loading file"
+	if not args.prog:
+		if not args.exit:
+			print "Welcome to FRACTRAIN, a FRACTRAN Interpreter"
+			while True:
+				try:
+					input = raw_input(">>> ")
+				except (KeyboardInterrupt,EOFError):
+					print "\nSee ya!"
+					break
+				if not input == "":
+					execute(input)
+	else:
+		try:
+			execute(args.prog[0])
+		except (KeyboardInterrupt,EOFError):
+			print "\nSee ya!"
+#else:
+#	print "This ain't an importable thing!"
+#	raise Exception("You're doing it wrong!")

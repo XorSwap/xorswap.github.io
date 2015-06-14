@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>FRACTRAIN</title>
+</head>
+<body>
+<!-- MENU --><iframe src="/menu.html" width="100%" height="50" frameBorder="0" scrolling="no">Your browser does not support iframes!<br/><a href="/menu.html">MENU</a></iframe>
+<h1>FRACTRAIN, a FRACTRAN Interpreter</h1>
+<a href="ft">Download</a><br/>
+FRACTRAN is a language invented by John Conway that I have recently become absolutely facinated with lately.
+It is a freakishly simple language that somehow is turing complete.
+A FRACTRAN program consists of an ordered set of fractions of natural numbers, and an accumulator.
+The accumulator starts out as the input number to the program, and is repeatedly multiplied by the first fraction in the list that yields a natural number.
+When no fraction in the list gives a natural number, the program halts with the accumulator as the output.
+<a href="http://en.wikipedia.org/wiki/FRACTRAN">This</a> Wikipedia page elaborates more on the subject.<br/>
+I wrote this program both as an exercise in Python, and as a way to further explore FRACTRAN.<br/>
+It's help page is as follows:
+<pre>
+usage: ft [-h] [-v] [-f] [-x] [-r file [file ...]] [-e prog] [-p powers]
+
+FRACTRAIN, a FRACTRAN Interpreter.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --verbose         print value of accumulator at each step
+  -f, --factor          print the prime factors of the accumulator
+  -x, --exit            exit program without running the interpreter
+  -r file [file ...], --run file [file ...]
+                        run program from file(s)
+  -e prog, --execute prog
+                        execute program from command line
+  -p powers, --print powers
+                        print powers of number
+</pre>
+Programs are written as an input, followed by a comma seperated list or fractions in brackets.
+For instance, Conway's prime calculating program could be written as <code>2(17/91,78/85,19/51,23/38,29/33,77/29,95/23,77/19,1/17,11/13,13/11,15/14,15/2,55/1)</code>, and run with the following:
+<pre>
+./ft -fx -p 2 -e '2(17/91,78/85,19/51,23/38,29/33,77/29,95/23,77/19,1/17,11/13,13/11,15/14,15/2,55/1)'
+</pre>
+It would output something like this:
+<pre>
+2 (2^1)
+4 (2^2)
+8 (2^3)
+32 (2^5)
+128 (2^7)
+2048 (2^11)
+8192 (2^13)
+131072 (2^17)
+</pre>
+Before you quit on it, because it's too slow.
+</body>
+</html>

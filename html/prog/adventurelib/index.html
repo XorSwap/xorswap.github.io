@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Adventure Engine Demo</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="adventure.js"></script>
+		<script type="text/javascript">
+		game = new Adventure();
+		game.outputs.inventory = "inv";
+		game.outputs.text = "out";
+		go = function(input)
+		{
+			game.go(input);
+		};
+		</script>
+		<script src="gamedata.js"></script>
+	</head>
+	<body OnLoad="game.load();">
+		<center>
+			Output:<br/>
+			<p id="out"></p>
+			Inventory:<br/>
+			<p id="inv"></p>
+		</center>
+	</body>
+</html>

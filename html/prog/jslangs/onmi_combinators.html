@@ -1,0 +1,93 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>SKI</title>
+<script type="text/javascript">
+function U(I,J,O)
+{
+	alert=function(X){};
+	q=d=0;
+	function chomp()
+	{
+		alert("Chomp: "+I[i]);
+		if(I[i]=='(')
+		{
+			alert("Bracketing...");
+			q=i;
+			d=0;
+			do
+			{
+				if(I[i]=='(')
+					d++;
+				if(I[i]==')')
+					d--;
+				i++;
+			}while(d);
+			alert("Got: "+I.slice(q+1,i-1));
+			return I.slice(q+1,i-1);
+		}
+		else
+		{
+			i++;
+			return I.charAt(i-1);
+		}
+	}
+	function replaceAll(str,mapObj)
+	{
+		re = new RegExp(Object.keys(mapObj).join("|"),"g");
+		return str.replace(re, function(matched)
+		{
+			return mapObj[matched];
+		});
+	}
+	function toObject(names, values)
+	{
+		result = {};
+		for(var w = 0; w < names.length; w++)
+			result[names[w]] = values[w];
+		return result;
+	}
+	O(I+'<br/>');
+	if(cc==0)
+		return;
+	cc--;
+	alert(Object.keys(J));
+	if(I.charAt(0).match('['+Object.keys(J).join("")+']'))
+	{
+		Q=J[I.charAt(0)];
+		_=[];
+		i=1;
+		for(n=0;n<Q[0].length;n++)
+			_.push(chomp());
+		F=I.slice(i);
+		U(replaceAll(Q[1],toObject(Q[0].split(''),_))+F,J,O);
+	}
+}
+function go()
+{
+	Q={
+		C:["XYZ","XZY"],
+		S:["XYZ","XZ(YZ)"],
+		K:["XY","X"],
+		I:["X","X"],
+		B:["XYZ","X(YZ)"],
+		W:["XY","XYY"]
+	};
+	cc=50;
+	document.getElementById("out").innerHTML="";
+	U(document.getElementById("in").value,Q,
+	function(_)
+	{
+		document.getElementById("out").innerHTML+=_;
+	});
+}
+</script>
+</head>
+<body>
+<!--#include virtual="/menu.html" -->
+<h1>SKI</h1>
+<textarea id="in"></textarea><br/>
+<button OnClick="go();">RUN</button><br/>
+<div id="out"></div><br/>
+</body>
+</html>

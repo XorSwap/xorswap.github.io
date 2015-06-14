@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>LISP</title>
+<script type="text/javascript">
+function parse(I)
+{
+ return eval(I
+  .replace(/,/g,"','")
+  .replace(/ /g,",")
+  .replace(/(([^(),'])+)/g,"'$1'")
+  .replace(/\(/g,"[")
+  .replace(/\)/g,"]")
+ );
+}
+function evaluate(I)
+{
+ if(typeof I === "string")
+  return parseFloat(I);
+ else
+  if(typeof I[0] === "string")
+  {
+   if(I[0]=='+') return evaluate(I[1])+evaluate(I[2]);
+   if(I[0]=='*') return evaluate(I[1])*evaluate(I[2]);
+   if(I[0]=='/') return evaluate(I[1])/evaluate(I[2]);
+   if(I[0]=='-') return evaluate(I[1])-evaluate(I[2]);
+  }
+  else
+   return I.map(evaluate);
+}
+function go()
+{
+	document.getElementById("out").value=evaluate(parse(document.getElementById("in").value));
+}
+</script>
+</head>
+<body>
+<!--#include virtual="/menu.html" -->
+<h1>LISP</h1>
+<textarea id="in"></textarea><br/>
+<button OnClick="go();">RUN</button><br/>
+<textarea id="out"></textarea><br/>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>SKI</title>
+<script type="text/javascript">
+function U(I,J,O)
+{
+	alert=function(X){};
+	q=d=0;
+	function chomp()
+	{
+		alert("Chomp: "+I[i]);
+		if(I[i]=='(')
+		{
+			alert("Bracketing...");
+			q=i;
+			d=0;
+			do
+			{
+				if(I[i]=='(')
+					d++;
+				if(I[i]==')')
+					d--;
+				i++;
+			}while(d);
+			alert("Got: "+I.slice(q+1,i-1));
+			return I.slice(q+1,i-1);
+		}
+		else
+		{
+			i++;
+			return I.charAt(i-1);
+		}
+	}
+	O(I+' ');
+	if(cc==0)
+		return;
+	cc--;
+	if(I.charAt(0).match("[SKI]"))
+	switch(I[0])
+	{
+		case 'S':
+			i=1;
+			O("S<br/>");
+			X=chomp();
+			Y=chomp();
+			Z=chomp();
+			F=I.slice(i);
+			alert(
+				"X="+X+"\n"+
+				"Y="+Y+"\n"+
+				"Z="+Z+"\n"+
+				"F="+F+"\n"
+			);
+			U(X+Z+'('+Y+Z+')'+F,O);
+		break;
+		case 'K':
+			i=1;
+			O("K<br/>");
+			X=chomp();
+			Y=chomp();
+			F=I.slice(i);
+			alert(
+				"X="+X+"\n"+
+				"Y="+Y+"\n"+
+				"F="+F+"\n"
+			);
+			U(X+F,O);
+		break;
+		case 'I':
+			i=1;
+			O("I<br/>");
+			X=chomp();
+			F=I.slice(i);
+			alert(
+				"X="+X+"\n"+
+				"F="+F+"\n"
+			);
+			U(X+F,O);
+		break;
+	}
+}
+function go()
+{
+	cc=50;
+	document.getElementById("out").innerHTML="";
+	U(document.getElementById("in").value,
+	function(_)
+	{
+		document.getElementById("out").innerHTML+=_;
+	});
+}
+</script>
+</head>
+<body>
+<!--#include virtual="/menu.html" -->
+<h1>Underload</h1>
+<textarea id="in"></textarea><br/>
+<button OnClick="go();">RUN</button><br/>
+<div id="out"></div><br/>
+</body>
+</html>

@@ -1,0 +1,203 @@
+@Gray,Black
+
+#  N
+# W E
+#  S
+
+# City Map
+
+#   1
+#   2
+# 34567
+#   8
+#   9
+
+# 1 - Bank
+# 2 - Hospital
+# 3 - Gate
+# 4 - Movie Theatre
+# 5 - Skyscraper
+# 6 - Casino
+# 7 - Arcade
+# 8 - Grocery Store
+# 9 - Hotel
+
+:city_w_gate_out
+$West City Gate
+|A mossy stone wall stretches as far as the eye can see in both
+|directions, curving gently away from you.  Set into the wall is an iron
+|gate, flanked on both sides by round stone towers set into the wall. 
+|There is a guard in one of the towers.
+>Back>plains_path
+>"Can you let me in?">city_w_gate_talk
+
+:city_w_gate_talk
+$Guard
+|"Yeah, sure, whatever."
+|The guard opens the gate.
+>Leave>city_w_gate_out
+>Enter>city_w_gate_in
+
+:city_w_gate_in
+$West City Gate
+|A wrought-iron gate is embedded in the mossy stone wall.
+>In>city_w_out
+>Gate>city_w_gate_out
+
+
+:city_w_out
+$West City
+|  .  
+|  .  
+|X....
+|  .  
+|  .  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|You can see the city's gate from here.
+>Gate>city_w_gate_in
+>In>city_w_in
+>Clockwise>city_n_out
+>Counter Clockwise>city_s_out
+
+:city_w_in
+$West City
+|  .  
+|  .  
+|.X...
+|  .  
+|  .  
+|
+|You can see a Movie theatre here.
+>In>city_center
+>Out>city_w_out
+>Clockwise>city_n_in
+>Counter Clockwise>city_s_in
+
+
+:city_n_out
+$North City
+|  X  
+|  .  
+|.....
+|  .  
+|  .  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|You can see a bank here.
+>In>city_n_in
+>Clockwise>city_e_out
+>Counter Clockwise>city_w_out
+>Bank>city_bank
+
+:city_n_in
+$North City
+|  .  
+|  X  
+|.....
+|  .  
+|  .  
+|
+|You can see a hospital here.
+>In>city_center
+>Out>city_n_out
+>Clockwise>city_e_in
+>Counter Clockwise>city_w_in
+>Hospital>city_hospital
+
+
+:city_e_out
+$East City
+|  .  
+|  .  
+|....X
+|  .  
+|  .  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|There is an arcade here.
+>In>city_e_in
+>Clockwise>city_s_out
+>Counter Clockwise>city_n_out
+>Arcade>city_arcade
+
+:city_e_in
+$East City
+|  .  
+|  .  
+|...X.
+|  .  
+|  .  
+|
+|You can see a casino here.
+>In>city_center
+>Out>city_e_out
+>Clockwise>city_s_in
+>Counter Clockwise>city_n_in
+
+
+:city_s_out
+$South City
+|  .  
+|  .  
+|.....
+|  .  
+|  X  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|A hotel sits here.
+>In>city_s_in
+>Clockwise>city_w_out
+>Counter Clockwise>city_e_out
+
+:city_s_in
+$South City
+|  .  
+|  .  
+|.....
+|  X  
+|  .  
+|
+|there's a grocery store here.
+>In>city_center
+>Out>city_s_out
+>Clockwise>city_w_in
+>Counter Clockwise>city_e_in
+
+
+:city_center
+$City Center
+|  .  
+|  .  
+|..X..
+|  .  
+|  .  
+|
+|A huge skyscraper looms overhead.
+>North>city_n_in
+>South>city_s_in
+>East>city_e_in
+>West>city_w_in
+>Skyscraper>city_skyscraper
+
+:city_skyscraper
+$Skyscraper
+|The doors are locked.  Aww...
+>Leave>city_center
+

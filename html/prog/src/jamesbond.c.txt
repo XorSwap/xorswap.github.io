@@ -1,0 +1,32 @@
+/*
+ * This is the kind of strange
+ * stuff that happens when I
+ * code when tired.
+ */
+
+#ifdef _
+#ifndef __
+"The name's "
+#endif
+#endif
+#ifndef _
+#define _
+main()
+{
+puts(""
+#include __FILE__
+"\n"
+#include __FILE__
+"");
+}
+#undef _
+#endif
+#ifdef __
+#ifdef _
+"James "
+#endif
+#endif
+#ifdef _
+#define __
+"Bond."
+#endif

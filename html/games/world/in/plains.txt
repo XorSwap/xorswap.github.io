@@ -1,0 +1,115 @@
+@Gold,Black
+
+:plains
+$Plains
+|You are standing in the middle of a field of golden coloured wheat.  It
+|sways a bit in the wind.  There is a massive wall of rock, towering up
+|into the sky as far as the eye can see.  Set into the rock at a slight
+|angle are two perfectly rectangular, pale white, doors.  There are
+|flat notches set into the cliff every foot, forming a ladder leading to a
+|hole in the wall about 10 meters up.
+>Doors>plains_doors
+>Ladder>plains_ladder
+>Field>plains_field
+
+:plains_doors
+$Doors
+|The doors are a milky white, and slightly warm to the touch.  They refuse
+|to be opened.
+>Ladder>plains_ladder
+>Field>plains
+
+:plains_ladder
+$Stone Ladder
+|You climb the ladder.  It's quite difficult, but you manage it.
+>Down>plains
+>Up>plains_wall_hole
+
+:plains_wall_hole
+$Hole in the Wall
+|The hole is just big enough for you to fit in if you crawl.  It smells
+|damp, but it's dry.
+>Forwards>plains_wall_in_a
+>Backwards>plains_ladder
+
+:plains_wall_in_a
+$Hole in the Wall
+|You crawl through the hole.
+>Forwards>plains_wall_in_b
+>Backwards>plains_wall_hole
+
+:plains_wall_in_b
+$Hole in the Wall
+|You crawl through the hole some more.
+>Forwards>plains_wall_in_c
+>Backwards>plains_wall_in_a
+
+:plains_wall_in_c
+$Hole in the Wall
+|Without warning, the ground gives way, and you fall through!
+>Fall>pillars
+
+# plains_field to plains_path: East,East
+# plains_path to plains: Back,West
+:plains_field
+$Field
+|You continue walk through the wheat.  The sky is completely cloudless and
+|blue.  The wheat makes a gentle rustling noise.
+>North>plains_north
+>South>plains_south
+>East>plains_east
+>West>plains
+
+:plains_north
+$House
+|There is a house here.
+>South>plains_field
+>House>plainshouse
+
+:plains_south
+$Field
+|You continue to walk amongst the wheat.  The wheat feels slightly damp
+|now.
+>North>plains_east_north
+>South>plains_east_south
+>East>plains_east
+>West>plains_east_west
+
+:plains_east
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_east_north
+>South>plains_east_south
+>East>plains_path
+>West>plains
+
+:plains_east_north
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_east_north
+>South>plains_east_south
+>East>plains_east_north
+>West>plains_east
+
+:plains_east_south
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_east
+>South>plains_east_north
+>East>plains_east_west
+>West>plains_east_south
+
+:plains_east_west
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_south
+>South>plains_east
+>East>plains_east_north
+>West>plains_east_south
+
+:plains_path
+$Path
+|The wheat gives way to an old and overgrown brick path, which stretches
+|over the far hill.
+>Path>city_w_gate_out
+>Back>plains_east

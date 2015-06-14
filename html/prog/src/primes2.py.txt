@@ -1,0 +1,36 @@
+import sys;sys.setrecursionlimit(9999999)
+import itertools as q;X=lambda I,N:type(I) is list and len(I)==N
+def s(I):
+	if X(I,2):
+		if X(I[0],1):
+			return r(I[0][0],I[1],1)
+		T=[s(I[0]),I[1]]
+		if T!=I:
+			return T
+		return[I[0],s(I[1])]
+	return I
+def r(I,V,N):
+	if type(I) is list:
+		if len(I)==1:
+			return[r(I[0],V,N+1)]
+		return[r(I[0],V,N),r(I[1],V,N)]
+	return V if I==N else I
+def p(I):
+	t=[]
+	for i in reversed(list(I)):
+		if i=="{":t=t[:-2]+[[t[-1],t[-2]]]
+		elif i=="}":t[-1]=[t[-1]]
+		else:t+=[int(i)]
+	return t[0]
+def g(n):
+	t=[]
+	P=p("{}{1}}2{{}}"+"{2"*n+"1}{1}}1{}{1{1{{}{11}}}{{1}}1{}{{{441{}{11}{2{11}}}}{{13{2{64}}}{4{13}}{{1}}22")
+	print P
+	return False
+	T=0
+	while T!=P:
+		T=P
+		P=s(P)
+	return P[0][0]==1
+for x in q.ifilter(g,q.count()):
+	print x

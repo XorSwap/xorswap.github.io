@@ -1,0 +1,14 @@
+/*
+ * The result of coding when sick.
+ * I woke up to find this open on my laptop.
+ * Note:
+ * ONLY works with GCC!
+ * Running with any arguments will produce
+ * undefined behaviour.
+ */
+
+#define O printf(
+_(_){O"e");goto*_
+;}main(o){O"H");_
+(&&_);O"o");_:O(o
+-1)?"ll":"!\n");}

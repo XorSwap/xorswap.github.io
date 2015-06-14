@@ -1,0 +1,831 @@
+@Gray,Black
+:city_w_gate_out
+$West City Gate
+|A mossy stone wall stretches as far as the eye can see in both
+|directions, curving gently away from you.  Set into the wall is an iron
+|gate, flanked on both sides by round stone towers set into the wall. 
+|There is a guard in one of the towers.
+>Back>plains_path
+>"Can you let me in?">city_w_gate_talk
+:city_w_gate_talk
+$Guard
+|"Yeah, sure, whatever."
+|The guard opens the gate.
+>Leave>city_w_gate_out
+>Enter>city_w_gate_in
+:city_w_gate_in
+$West City Gate
+|A wrought-iron gate is embedded in the mossy stone wall.
+>In>city_w_out
+>Gate>city_w_gate_out
+:city_w_out
+$West City
+|  .  
+|  .  
+|X....
+|  .  
+|  .  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|You can see the city's gate from here.
+>Gate>city_w_gate_in
+>In>city_w_in
+>Clockwise>city_n_out
+>Counter Clockwise>city_s_out
+:city_w_in
+$West City
+|  .  
+|  .  
+|.X...
+|  .  
+|  .  
+|
+|You can see a Movie theatre here.
+>In>city_center
+>Out>city_w_out
+>Clockwise>city_n_in
+>Counter Clockwise>city_s_in
+:city_n_out
+$North City
+|  X  
+|  .  
+|.....
+|  .  
+|  .  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|You can see a bank here.
+>In>city_n_in
+>Clockwise>city_e_out
+>Counter Clockwise>city_w_out
+:city_n_in
+$North City
+|  .  
+|  X  
+|.....
+|  .  
+|  .  
+|
+|You can see a hospital here.
+>In>city_center
+>Out>city_n_out
+>Clockwise>city_e_in
+>Counter Clockwise>city_w_in
+>Hospital>city_hospital
+:city_e_out
+$East City
+|  .  
+|  .  
+|....X
+|  .  
+|  .  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|There is an arcade here.
+>In>city_e_in
+>Clockwise>city_s_out
+>Counter Clockwise>city_n_out
+>Arcade>city_arcade
+:city_e_in
+$East City
+|  .  
+|  .  
+|...X.
+|  .  
+|  .  
+|
+|You can see a casino here.
+>In>city_center
+>Out>city_e_out
+>Clockwise>city_s_in
+>Counter Clockwise>city_n_in
+:city_s_out
+$South City
+|  .  
+|  .  
+|.....
+|  .  
+|  X  
+|
+|This place doesn't really look much like a city; it's more like a small
+|village than anything.  The buildings are all made of wood and the same
+|stone brick as the walls to the city.  The ground is covered in a fine,
+|reddish brown dust.
+|
+|A hotel sits here.
+>In>city_s_in
+>Clockwise>city_w_out
+>Counter Clockwise>city_e_out
+:city_s_in
+$South City
+|  .  
+|  .  
+|.....
+|  X  
+|  .  
+|
+|there's a grocery store here.
+>In>city_center
+>Out>city_s_out
+>Clockwise>city_w_in
+>Counter Clockwise>city_e_in
+:city_center
+$City Center
+|  .  
+|  .  
+|..X..
+|  .  
+|  .  
+|
+|A huge skyscraper looms overhead.
+>North>city_n_in
+>South>city_s_in
+>East>city_e_in
+>West>city_w_in
+>Skyscraper>city_skyscraper
+@Black,Lime
+:city_arcade
+$ARCADE
+|YOU ARE IN AN ARCADE
+|YOU SEE HERE:
+|A GAME
+|A DOOR
+>DOOR>city_e_out
+>GAME>city_arcade_game
+:city_arcade_game
+$GAME
+|YOU ARE IN A MAZE OF TWISTY LITTLE PASSAGES, ALL ALIKE
+>QUIT>city_arcade
+>SAVE>city_arcade_game_crash
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+>XYZZY>city_arcade_secret
+:city_arcade_game_crash
+$SAVE
+|SAVING GAME TO DISK............
+|)%|FMOA(|*&@T|)@B"{P)I^{JP(UTPJ)C(MU@{N*Y@V)|C)Y*PNTU{V)^(BU{@|&Y{N|D(UV*)B^(
+|@|*@!()*>SEGMENTATION FAULT (CORE DUMPED)>city_arcade
+:city_arcade_secret
+$UHHH...
+|THE SCREEN DISPLAYS A STRANGE MESSAGE...
+>WHAT IS IT?>city_arcade_poem
+:city_arcade_poem
+$~ $ CAT POEM.TXT
+|ONCE UPON A MIDNIGHT DREARY,
+|FINGERS CRAMPED AND VISION BLEARY,
+|    SYSTEM MANUALS PILED HIGH
+|    AND WASTED PAPER ON THE FLOOR,
+|LONGING FOR THE WARMTH OF BEDSHEETS,
+|STILL I SAT HERE DOING SPREADSHEETS:
+|HAVING REACHED THE BOTTOM LINE,
+|I TOOK A FLOPPY FROM THE DRAWER.
+|
+|TYPING WITH A STEADY HAND,
+|I THEN INVOKED THE "SAVE" COMMAND
+|    BUT GOT INSTEAD A REPRIMAND:
+|    IT READ, "ABORT, RETRY, IGNORE?"
+|WAS THIS SOME OCCULT ILLUSION?
+|SOME MANIACAL TYPE INTRUSION?
+|THESE WERE CHOICES SOLOMON HIMSELF,
+|HAD NEVER FACED BEFORE.
+|
+|CAREFULLY I WEIGHED MY OPTIONS...
+|THESE THREE SEEMED TO BE THE TOP ONES.
+|    CLEARLY I MUST NOW ADOPT ONE;
+|    CHOOSE: ABORT, RETRY, IGNORE?
+|WITH MY FINGERS PALE AND TREMBLING
+|SLOWLY TOWARD THE KEYBOARD BENDING,
+|LONGING FOR A HAPPY ENDING,
+|HOPING ALL WOULD BE RESTORED
+|
+|PRAYING FOR SOME GUARANTEE,
+|FINALLY I PRESSED A KEY.
+|BUT WHAT ON THE SCREEN DID I SEE?
+|    AGAIN "ABORT, RETRY, IGNORE?"
+|    I TRIED TO CATCH THE CHIPS OFF GUARD -
+|I PRESSED AGAIN, BUT TWICE AS HARD,
+|BUT LUCK WAS JUST NOT ON THE CARDS,
+|I SAW WHAT I HAD SEEN BEFORE.
+|
+|NOW I TYPED IN DESPERATION
+|TRYING RANDOM COMBINATIONS.
+|    STILL THERE CAME THE INCANTATION
+|    "ABORT, RETRY, IGNORE."
+|THERE I SAT, DISTRAUGHT, EXHAUSTED,
+|BY MY OWN MACHINE ACCOSTED
+|GETTING UP, I TURNED AWAY
+|AND PACED ACROSS THE OFFICE FLOOR.
+|
+|AND THEN I SAW AN AWFUL SIGHT
+|A BOLD AND BLINDING FLASH OF LIGHT
+|A LIGHTENING BOLT THAT CUT THE NIGHT,
+|    AND SHOOK ME TO MY VERY CORE.
+|    THE PC SCREEN COLLAPSED AND DIED.
+|"OH NO! MY DATABASE!" I CRIED.
+|I HEARD A DISTANT VOICE REPLY,
+|"YOU'LL SEE YOUR SPREADSHEETS NEVERMORE!"
+|
+|TO THIS DAY I DO NOT KNOW
+|THE PLACE TO WHICH OUR DATA GOES.
+|    PERHAPS IT GOES TO HEAVEN,
+|    WHERE THE ANGELS HAVE IT STORED.
+|BUT AS FOR PRODUCTIVITY, WELL,
+|I FEAR THIS HAS GONE STRAIGHT TO HELL.
+|AND THAT'S THE TALE I HAVE TO TELL -
+|YOUR CHOICE:
+>ABORT>city_arcade
+>RETRY>secret_arcade_secret
+>IGNORE>city_arcade_poem
+|
+|BY LUCY BLADES
+@White,Red
+:city_hospital
+$Hospital
+|The walls are painted a sterile looking white, and there is a red stripe
+|painted along the wall, to hide the scuff marks from nonexistent chairs.
+|It's a fairly ramshackle hospital, there's just one bed here.
+>Out>city_n_in
+>Sleep>city_hospital_sleep
+:city_hospital_sleep
+$ZZZ...
+|You get in the bed.
+>Really sleep>dream
+:city_hospital_wake
+$You Wake Up
+|You are lying, prone in a hospital bed.
+>Get Up>city_hospital
+@White,DarkGray
+:dream
+$Dream
+|Dream
+>Dream>dream_a
+:dream_a
+$Dream.
+|Dream.
+>Dream.>dream_b
+:dream_b
+$Dream?
+|Dream?
+>Dream?>dream_c
+:dream_c
+$Dream!
+|Dream!
+>Dream!>dream_d
+:dream_d
+$Dream.
+|Dream.
+>Dream.>dream_e
+:dream_e
+$Dream
+|That sound.
+>Dream>dream_f
+:dream_f
+$Dream
+|Falling.
+>Dream>dream_g
+:dream_g
+$Dream
+|Can you hear it?
+>Dre[YES]am>dream_h
+>Dr[NO]eam>dream_h
+:dream_h
+$Dream
+|Still falling.
+>Dream>dream_i
+:dream_i
+$Dream
+|Wheee.
+>Dream>dream_j
+:dream_j
+$Dream
+|What fun.
+>Dream>dream_k
+:dream_k
+$Dream
+|So have you worked it out yet?
+>Dream>dream_l
+:dream_l
+$Dream
+|The meaning, I mean.
+>Dream>dream_m
+:dream_m
+$Dream
+|Of this whole mess.
+>Dream>dream_n
+:dream_n
+$Dream
+|The game, life, parable, whatever.
+>Dream>dream_o
+:dream_o
+$Dream
+|Yeah.
+>Dream>dream_p
+:dream_p
+$Dream
+|So do you want a hint or something?
+>Dre[YES]am>dream_q
+>Dr[NO]eam>dream_q
+:dream_q
+$Dream
+|Well you won't get one.
+>Dream>dream_r
+:dream_r
+$Dream
+|Anyway, seeya!
+>Dream>city_hospital_wake
+@OliveDrab,Black
+:house
+$The Beginning
+|Blackness surrounds you.  You feel a sharp jolt as you wake up.
+>Bedroom>house_bedroom_mine
+:house_bedroom_mine
+$Your Bedroom
+|It's a mess.  There are dirty cloths and pieces of paper all
+|over the floor.  You really need to clean this mess up sometime.
+|This is mainly because your mother keeps telling you to,
+|though, not because you think it's a good idea.
+>Hallway>house_hallway_bedroom_end
+:house_hallway_bedroom_end
+$Hallway
+|The hallway is very neat.  A gorgeous patterned rug lies on the
+|hardwood floor.
+>Bedroom>house_bedroom_mine
+>Bedroom>house_bedroom_other
+>Bathroom>house_bathroom_up
+>Hallway>house_hallway_bedroom_mid
+:house_bedroom_other
+$Not Your Bedroom
+|This is your parent's bedroom, and it's way neater
+|than yours.  The bed is made, and there are two nightstands
+|on either side of it.  A large wooden dresser takes up most of a wall.
+>Hallway>house_hallway_bedroom_end
+:house_bathroom_up
+$Bathroom
+|The bathroom has a black and white tiled floor.  A toilet,
+|a sink, a shower, and a closet are all packed into the small space.
+>Hallway>house_hallway_bedroom_end
+:house_hallway_bedroom_mid
+$Hallway
+|There are several pictures hanging on the wall in the middle of the
+|hallway.  There is also a small shelf with a lit candle on it.
+>Hallway>house_hallway_bedroom_end
+>Hallway>house_hallway_bedroom_begin
+:house_hallway_bedroom_begin
+$Hallway
+|A wooden door.  It leads onward.
+>Hallway>house_hallway_bedroom_mid
+>Living Room>house_livingroom_a
+:house_livingroom_a
+$Living Room
+|You are in a largeish, round room.  There is a TV on one wall, and a
+|round couch along the opposite one.  The room is painted a shade of
+|dark green.
+>Hallway>house_hallway_bedroom_begin
+>TV>house_tv_a
+:house_livingroom_b
+$Living Room
+|You are in a largeish, round room.  There is a TV on one wall, and a
+|round couch along the opposite one.  The room is painted a shade of
+|dark green.  You can't quite put your finger on it, but something feels
+|different.  Is it colder?
+>Door>house_outdoor
+>TV>house_tv_b
+:house_tv_a
+$TV
+|The TV shows one image: a white circle on a black background, with a
+|gap at the top.  A vertical line goes through the gap.
+>Living Room>house_livingroom_b
+:house_tv_b
+$TV
+|The TV shows only static.
+>Living Room>house_livingroom_b
+:house_outdoor
+$Hallway?
+|The doorway opens onto... nothing!  The wooden floor falls away, into
+|the black void.
+>Living Room>house_livingroom_b
+>Void>void
+@DarkGrey,Black
+:pillars
+$White Towers
+|Rectangular, white columns stick out of the ground at odd angles,
+|looking a lot like crystals.  Aside for a few gaps here and there, they
+|almost completely fill the area.  You seem to be standing in a clearing,
+|surrounded by the pillars.  The sky is black here, and you can see that
+|the pillars are glowing slightly.  There is no sign of the trapdoor
+|that led you here.
+>Gap>pillars_dynamo_gap
+>Gap>pillars_suit_gap
+>Gap>pillars_out_gap
+:pillars_dynamo_gap
+$Gap
+|You have to crawl to fit through the gap in the pillars.
+>White Towers>pillars
+>Gap>pillars_dynamo
+:pillars_dynamo
+$Small Clearing
+|You enter a small clearing in the glowing pillars.  There is what
+|appears to be a small dynamo sitting in the middle of the clearing.
+>Gap>pillars_dynamo_gap
+>Dynamo>pillars_dynamo_try
+:pillars_dynamo_try
+$Dynamo
+|The dynamo seems to be broken, and you can't get it to do anything.
+>Clearing>pillars_dynamo
+:pillars_suit_gap
+$Gap
+|You crawl through the gap in the crystalline pillars.
+>White Towers>pillars
+>Clearing>pillars_suit
+:pillars_suit
+$Clearing
+|In the clearing, there is what appears to be a black-and-white tuxedo
+|suit, sitting, empty on a small wooden three-legged stool.  It looks as
+|though there could be a person wearing it, except for the fact that it's
+|empty.
+>Gap>pillars_suit_gap
+>Suit>pillars_suit_detail
+:pillars_suit_detail
+$Suit
+|Upon closer inspection, the suit seems to have been starched enough for
+|it to be able to stand up on it's own.
+>Clearing>pillars_suit
+>Touch It>pillars_suit_touch
+:pillars_suit_touch
+$Touch It
+|You gently poke the suit with your finger.  The suit falls off of the
+|stool with a starchy FWUMP.
+>Clearing>pillars_suit_touched
+:pillars_suit_touched
+$Clearing
+|The suit lies on the glowing ground beside the wooden stool.
+>Gap>pillars_suit_gap
+:pillars_out_gap
+$Gap
+|You crouch through the gap in the pillars.
+>White Towers>pillars
+>Tiny Clearing>pillars_out
+:pillars_out
+$Tiny Clearing
+|This clearing is minuscule!  It's just big enough to house two
+|rectangular, white doors made of the same material as everything else
+|around here.  The doors open as you approach, leading into a tiny room.
+>Gap>pillars_out_gap
+>Doors>pillars_out_elevator
+:pillars_out_elevator
+$Elevator
+|The doors close behind you, and the room starts to rise.  After a short
+|delay, during which nothing seems to happen, the doors open.
+>Exit>plains
+@Gold,Black
+:plains
+$Plains
+|You are standing in the middle of a field of golden coloured wheat.  It
+|sways a bit in the wind.  There is a massive wall of rock, towering up
+|into the sky as far as the eye can see.  Set into the rock at a slight
+|angle are two perfectly rectangular, pale white, doors.  There are
+|flat notches set into the cliff every foot, forming a ladder leading to a
+|hole in the wall about 10 meters up.
+>Doors>plains_doors
+>Ladder>plains_ladder
+>Field>plains_field
+:plains_doors
+$Doors
+|The doors are a milky white, and slightly warm to the touch.  They refuse
+|to be opened.
+>Ladder>plains_ladder
+>Field>plains
+:plains_ladder
+$Stone Ladder
+|You climb the ladder.  It's quite difficult, but you manage it.
+>Down>plains
+>Up>plains_wall_hole
+:plains_wall_hole
+$Hole in the Wall
+|The hole is just big enough for you to fit in if you crawl.  It smells
+|damp, but it's dry.
+>Forwards>plains_wall_in_a
+>Backwards>plains_ladder
+:plains_wall_in_a
+$Hole in the Wall
+|You crawl through the hole.
+>Forwards>plains_wall_in_b
+>Backwards>plains_wall_hole
+:plains_wall_in_b
+$Hole in the Wall
+|You crawl through the hole some more.
+>Forwards>plains_wall_in_c
+>Backwards>plains_wall_in_a
+:plains_wall_in_c
+$Hole in the Wall
+|Without warning, the ground gives way, and you fall through!
+>Fall>pillars
+:plains_field
+$Field
+|You continue walk through the wheat.  The sky is completely cloudless and
+|blue.  The wheat makes a gentle rustling noise.
+>North>plains_north
+>South>plains_south
+>East>plains_east
+>West>plains
+:plains_north
+$House
+|There is a house here.
+>South>plains_field
+>House>plainshouse
+:plains_south
+$Field
+|You continue to walk amongst the wheat.  The wheat feels slightly damp
+|now.
+>North>plains_east_north
+>South>plains_east_south
+>East>plains_east
+>West>plains_east_west
+:plains_east
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_east_north
+>South>plains_east_south
+>East>plains_path
+>West>plains
+:plains_east_north
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_east_north
+>South>plains_east_south
+>East>plains_east_north
+>West>plains_east
+:plains_east_south
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_east
+>South>plains_east_north
+>East>plains_east_west
+>West>plains_east_south
+:plains_east_west
+$Field
+|You continue to walk amongst the wheat.
+>North>plains_south
+>South>plains_east
+>East>plains_east_north
+>West>plains_east_south
+:plains_path
+$Path
+|The wheat gives way to an old and overgrown brick path, which stretches
+|over the far hill.
+>Path>city_w_gate_out
+>Back>plains_east
+@FireBrick,Black
+:plainshouse
+$House
+|You are standing in the entryway of a large, brick house.  The floor is
+|wooden, and covered with a patterned rug.  There is a doorbell on the
+|inside, strangely enough.
+>Out>plains_north
+>Doorbell>plainshouse_doorbell
+>Living Room>plainshouse_livingroom
+>Stairway>plainshouse_stairway
+>Dining Room>plainshouse_diningroom
+:plainshouse_doorbell
+$Doorbell
+|The doorbell is rather ornate, made of polished brass.
+>Ring It>plainshouse_doorbell_ring
+>Leave It>plainshouse
+:plainshouse_doorbell_ring
+$RING!
+|The doorbell rings.  It makes a small chime sound.  After a short delay,
+|there is a much larger chime sound.  The sound is deafening.  The entire
+|building quakes with it.  You hear someone yelling, just before the
+|ceiling caves in.  You feel a sharp blow to your head.
+>Pass Out>dream
+:plainshouse_livingroom
+$Living Room
+|A TV sits in the corner, with two chairs facing it.  In one of the chairs
+|sits a man.
+>Entryway>plainshouse
+>Bedroom>plainshouse_bedroom
+>TV>plainshouse_tv
+>Man>plainshouse_man
+:plainshouse_tv
+$TV
+|The TV shows only static.
+>Living Room>plainshouse_livingroom
+:plainshouse_stairway
+$Stairway
+|The stairway is made of laminated wood, the kind that creaks when
+|stepped on.  There is something scratched into the wood on the wall.
+>Entryway>plainshouse
+>Climb>plainshouse_up_stairs
+>Wall>plainshouse_stairway_wall
+:plainshouse_stairway_wall
+$Wall
+|The word "HEAVEN" is inscribed in the wall, along with an arrow pointing
+|upwards.
+>Stairway>plainshouse_stairway
+:plainshouse_diningroom
+$Dining Room
+|Dining room.
+>Entryway>plainshouse
+>Kitchen>plainshouse_kitchen
+:plainshouse_bedroom
+$Bedroom
+|"Hey!" a voice yells.  "Get outta there!"
+>Leave>plainshouse_livingroom
+:plainshouse_kitchen
+$Kitchen
+|A countertop wraps around the room, above it, lies a row of cabinets.
+|There is a sink, a fridge, and an oven built into the counter.
+>Dining Room>plainshouse_diningroom
+:plainshouse_up_stairs
+$Upstairs
+|You go up the stairs.
+>Down>plainshouse_stairway
+>Attic>plainshouse_up
+:plainshouse_up
+$Attic
+|It's very old up here.  The light from the stairway reveals a layer of
+|dust over everything.  The attic is also filled wall to wall with
+|mannequins.  They're pretty creepy.
+>Mannequin>plainshouse_up_mannequin
+>Stairway>plainshouse_up_stairs
+:plainshouse_up_mannequin
+$Mannequin
+|The mannequin is flesh-coloured and has only the slightest hint of a
+|face.  It's been posed to appear as though it's walking.
+|Eeeeeuuuugggh...  So creepy!
+>Push it over>plainshouse_up_mannequin_push
+>Leave>plainshouse_up
+:plainshouse_up_mannequin_push
+$Push!
+|You give the mannequin a good hard shove.  It falls over, knocking down
+|the next one, which falls too, knocking over the next one,
+|which falls, knocking over the next one,
+|which falls, knocking over the next one,
+|which falls, knocking over the next one,
+|which falls, knocking over the next one,
+|etc.
+>Run Downstairs>plainshouse_stairway
+>Wait>plainshouse_up_mannequin_fall
+:plainshouse_up_mannequin_fall
+$Uhhh...
+|You stand there, watching in the dim light, as the mannequins slowly
+|knock each other over.  The last one falls, knocking a wooden beam out
+|of place.  The ceiling caves in.
+>Pass Out>dream
+@FireBrick,Black
+:plainshouse_man
+$Man
+|"Hello there!"
+>Leave>plainshouse_livingroom
+>"Hi!">plainshouse_man_talk
+:plainshouse_man_talk
+$Man
+|You ask the man...
+>"Who are you?">plainshouse_man_who
+|
+>"What do you do for a living?">plainshouse_man_what
+|
+>"Where am I?">plainshouse_man_where
+|
+>"When?">plainshouse_man_when
+|
+>"Why do you live here?">plainshouse_man_why
+|
+>Something else...>plainshouse_man_other
+:plainshouse_man_who
+$Man
+|"I'm just this guy, you know?"
+>Keep Talking>plainshouse_man_talk
+>Leave>plainshouse_livingroom
+:plainshouse_man_what
+$Man
+|"I sell mannequins.  They're upstairs, if you want to look."
+>Keep Talking>plainshouse_man_talk
+>Leave>plainshouse_livingroom
+:plainshouse_man_where
+$Man
+|"Now that you mention it, I've never really thought about that before."
+|"I'm not really sure where we are."
+|He shrugs.
+>Keep Talking>plainshouse_man_talk
+>Leave>plainshouse_livingroom
+:plainshouse_man_when
+$Man
+|"When what?"
+>Keep Talking>plainshouse_man_talk
+>Leave>plainshouse_livingroom
+:plainshouse_man_why
+$Man
+|"I'm here because I want to be here, simple."
+>Keep Talking>plainshouse_man_talk
+>Leave>plainshouse_livingroom
+:plainshouse_man_other
+$Man
+|Say what?
+|<input type="text">
+>Speak>plainshouse_man_other_speak
+:plainshouse_man_other_speak
+$Man
+|The man just sits there, not responding.
+>Keep Talking>plainshouse_man_talk
+>Leave>plainshouse_livingroom
+@Black,White
+:void
+$The Void
+|You jump into the blackness... darkness engulfs you.
+>Void>void_a
+:void_a
+$???
+>Void>void_b
+:void_b
+$???
+|Are you falling?
+>Void>void_c
+:void_c
+$???
+>Void>void_d
+:void_d
+$???
+|You can't tell.
+>Void>void_e
+:void_e
+$???
+>Void>void_f
+:void_f
+$???
+|Twisting around, you see a ladder floating in front of you.
+>Ladder>void_ladder
+>Void>void_a
+:void_ladder
+$Ladder?
+|You grab the ladder.  Your body jerks upwards.  Were you falling
+|upwards?
+>Climb>void_ladder_climb_a
+>Descend>void_ladder_descend
+:void_ladder_climb_a
+$Climb
+|You climb the ladder.
+>Climb>void_ladder_climb_b
+>Descend>void_ladder_descend
+:void_ladder_climb_b
+$Climb
+|You climb the ladder.  A wooden trapdoor emerges from the darkness
+|above, embedded in an infinite plane of blackness.
+>Trapdoor>void_ladder_out
+>Descend>void_ladder_descend
+:void_ladder_descend
+$Descend
+|You descend the ladder.
+>Climb>void_ladder_climb_a
+>Descend>void_ladder_descend
+:void_ladder_out
+$Trapdoor
+|You open the trapdoor, and climb through.
+>Through>pillars

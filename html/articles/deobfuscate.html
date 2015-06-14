@@ -1,0 +1,206 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>De-Obfuscating Perl Code</title>
+</head>
+<body>
+<!-- MENU --><iframe src="/menu.html" width="100%" height="50" frameBorder="0" scrolling="no">Your browser does not support iframes!<br/><a href="/menu.html">MENU</a></iframe>
+<h1>De-Obfuscating Perl Code</h1>
+<p><!-- INTRO -->
+So, as you probably can tell, I really like obfuscated code.  As I was looking through some obfuscated code the other day, and I came across <a href="http://www.perlmonks.org/?node_id=594266">the following Perl code</a>:
+</p>
+<pre><!-- ORIGINAL CODE -->
+not exp log srand xor s qq qx xor
+s x x length uc ord and print chr
+ord for qw q join use sub tied qx
+xor eval xor print qq q q xor int
+eval lc q m cos and print chr ord
+for qw y abs ne open tied hex exp
+ref y m xor scalar srand print qq
+q q xor int eval lc qq y sqrt cos
+and print chr ord for qw x printf
+each return local x y or print qq
+s s and eval q s undef or oct xor
+time xor ref print chr int ord lc
+foreach qw y hex alarm chdir kill
+exec return y s gt sin sort split
+</pre>
+<p>
+This code supposedly printed the words "just another perl hacker".  Now, I am not a Perl programmer, and I have never even looked at Perl before, but I was pretty sure that this was not legal code.  Pasting it into <a href="http://compileonline.com/">compileonline</a>, I verified that, as if by magic, the code does exactly what it says!  So, I decided that it would be fun to try to de-obfuscate the code myself, without knowing the language at all!
+</p>
+<p>
+Pasting the code into my editor of choice, <a href="http://notepad-plus-plus.org/">Notepad++</a>.  I immediately noticed something.  The code was supposed to contain only keywords, but the code was highlighted like so:
+</p>
+<pre><!-- HIGHLIGHTED CODE -->
+<span style="color:#4040FF">not exp log srand xor</span> <span style="color:#40FF40">s qq qx</span> <span style="color:#4040FF">xor</span>
+<span style="color:#40FF40">s x x length uc ord and print chr
+ord for qw q join use sub tied qx</span>
+<span style="color:#4040FF">xor eval xor print</span> qq q q <span style="color:#4040FF">xor int
+eval lc</span> q m cos and print chr ord
+for qw y abs ne open tied hex exp
+ref y m <span style="color:#4040FF">xor scalar srand print</span> qq
+q q <span style="color:#4040FF">xor int eval lc</span> qq y sqrt cos
+and print chr ord for qw x printf
+each return local x y <span style="color:#4040FF">or print</span> qq
+s s <span style="color:#4040FF">and eval</span> q s undef or oct xor
+time xor ref print chr int ord lc
+foreach qw y hex alarm chdir kill
+exec return y s <span style="color:#4040FF">gt sin sort split</span>
+</pre>
+<p>
+I believed that this information might be useful in the future.  My immediate concern was to figure out what order these keywords worked in, e.g. is <code>print print "Hi"</code> the same as <code>print(print("Hi"))</code>? Or is it the same as <code>print(print)("Hi")</code>?
+</p>
+<p>
+Upon creating a new instance of compileonline, I pasted the following into it:
+<pre>
+print print "Hi";
+</pre>
+The output I got was the following:
+<pre>
+Hi1
+</pre>
+This suggests to me that the correct interpretation is <code>print(print("Hi"))</code>.
+</p>
+<p>
+Another thing that I noticed was that there was a lot or <code>xor</code>s interspersed throughout the code.  I believed that these were acting as statement separators, similar to C's <a href="http://en.wikipedia.org/wiki/Comma_operator">comma operator</a>.  There were also some <code>and</code> and <code>or</code> operators, which I replaced with more <code>xor</code>s.
+</p>
+<p>
+The code now looked like this:
+<pre>
+	not exp log srand
+xor
+	s qq qx
+xor
+	s x x length uc ord and print chr ord for qw q join use sub tied qx
+xor
+	eval
+xor
+	print qq q q
+xor
+	int eval lc q m cos and print chr ord for qw y abs ne open tied hex exp ref y m
+xor
+	scalar srand print qq q q
+xor
+	int eval lc qq y sqrt cos and print chr ord for qw x printf each return local x y
+xor
+	print qq s s
+xor
+	eval q s undef or oct xor time xor ref print chr int ord lc foreach qw y hex alarm chdir kill exec return y s gt sin sort split
+</pre>
+Running the code, I verified that this indeed still works.
+</p>
+<p>
+Since I was fairly sure that the <code>xor</code>s were acting as statement separators at this point, I split up the code into multiple lines:
+<pre>
+not exp log srand;
+s qq qx;
+s x x length uc ord and print chr ord for qw q join use sub tied qx;
+eval;
+print qq q q;
+int eval lc q m cos and print chr ord for qw y abs ne open tied hex exp ref y m;
+scalar srand print qq q q;
+int eval lc qq y sqrt cos and print chr ord for qw x printf each return local x y;
+print qq s s;
+eval q s undef or oct xor time xor ref print chr int ord lc foreach qw y hex alarm chdir kill exec return y s gt sin sort split;
+</pre>
+</p>
+<p>
+I then tried to fully parenthesize the code, but was unable to parenthesize all of it.  I ended up with this:
+<pre>
+not(exp(log(srand())));
+s qq qx;
+s x x length(uc(ord())) and print(chr(ord())) for qw q join use sub tied qx;
+eval();
+print(qq q q);
+int(eval(lc(q m cos() and print(chr(ord())) for qw y abs ne open tied hex exp ref y m)));
+scalar(srand(print(qq q q)));
+int(eval(lc(qq y sqrt cos and print chr ord for qw x printf each return local x y)));
+print(qq s s);
+eval(q s undef() or oct() xor time() xor ref(print(chr(int(ord(lc()))))) foreach qw y hex alarm chdir kill exec return y s)gt(sin(sort(split())));
+</pre>
+The areas that are not parenthesized cause various errors and misbehaviours when changed.  They also correspond exactly to the uncoloured and green coloured areas of the original code, with the exception of the last line, the sixth line, and the third line.
+</p>
+<p>
+Since the <code>srand</code> function is used in the code, but the <code>rand</code> function is not, I believe that I can safely remove the <code>not(exp(log(srand())));</code> line.  I tried this, and found that it worked.  I also attempted to remove the <code>eval();</code> line, but removing it somehow caused the program to only output <code>another perl hacker</code>.
+</p>
+<p>
+looking at the <a href="http://perldoc.perl.org/functions/eval.html">documentation for <code>eval</code></a>, I found something pertinent: the <code>eval</code> function acts on a variable called <code>$_</code> if called without arguments.  I find this to be a rather strange concept, but it's how the language works, so I guess I have to go with it.  Replacing <code>eval();</code> with <code>eval($_);</code> results in code that still works.
+</p>
+<p>
+I noticed that the code still contains some redundant and/or pointless statements, such as <code>sin()</code> so I removed those:
+<pre>
+s qq qx;
+s x x print(chr(ord())) for qw q join use sub tied qx;
+eval($_);
+print(qq q q);
+int(eval(lc(q m print(chr(ord())) for qw y abs ne open tied hex exp ref y m)));
+scalar(srand(print(qq q q)));
+int(eval(lc(qq y print(chr(ord())) for qw x printf each return local x y)));
+print(qq s s);
+eval(q s ref(print(chr(int(ord(lc()))))) foreach qw y hex alarm chdir kill exec return y s)gt(sin(sort(split())));
+</pre>
+And verified that this code still works.
+</p>
+<p>
+I then decided to consult the Perl documentation about the mysterious <code>qw</code> that seems to crop up almost every second line, and turned up <a href="http://perlmeme.org/howtos/perlfunc/qw_function.html">this</a>.  About halfway down the page, it says that <i>any delimiter can be used</i>.  This means that <code>qw x stuff things stuff x</code> is equivalent to <code>('stuff','things','stuff')</code>, which is Perl's array syntax!  Replacing these, I got the following:
+<pre>
+s qq qx;
+s x x print(chr(ord())) for ('join','use','sub','tied') x;
+eval($_);
+print(qq q q);
+int(eval(lc(q m print(chr(ord())) for ('abs','ne','open','tied','hex','exp','ref') m)));
+scalar(srand(print(qq q q)));
+int(eval(lc(qq y print(chr(ord())) for ('printf','each','return','local') y)));
+print(qq s s);
+eval(q s ref(print(chr(int(ord(lc()))))) foreach ('hex','alarm','chdir','kill','exec','return') s)gt(sin(sort(split())));
+</pre>
+Additionally, the <code>qq q q</code> lines are equivalent to <code>" "</code>, so I replaced those too:
+<pre>
+s qq qx;
+s x x print(chr(ord())) for ('join','use','sub','tied') x;
+eval($_);
+print(" ");
+int(eval(lc(q m print(chr(ord())) for ('abs','ne','open','tied','hex','exp','ref') m)));
+scalar(srand(print(" ")));
+int(eval(lc(qq y print(chr(ord())) for ('printf','each','return','local') y)));
+print(" ");
+eval(q s ref(print(chr(int(ord(lc()))))) foreach ('hex','alarm','chdir','kill','exec','return') s)gt(sin(sort(split())));
+</pre>
+</p>
+<p>
+By now, I felt that it was possible to remove the <code>eval</code> statements.  Here's how I did that:  I isolated the code up to the first <code>eval</code>, replaced the <code>eval</code> with a <code>print</code>, and got the code to be run.  I then replaced that section of the source code with the output of the <code>eval</code>, to get the following:
+<pre>
+print(chr(ord())) for ('join','use','sub','tied');
+print(" ");
+print(chr(ord())) for ('abs','ne','open','tied','hex','exp','ref');
+scalar(srand(print(" ")));
+print(chr(ord())) for ('printf','each','return','local');
+print(" ");
+ref(print(chr(int(ord(lc()))))) foreach ('hex','alarm','chdir','kill','exec','return');
+</pre>
+</p>
+<p>
+By removing some extra statements, and changing the <code>foreach</code> to a <code>for</code>, I get this:
+<pre>
+print(chr(ord())) for ('join','use','sub','tied');
+print(" ");
+print(chr(ord())) for ('abs','ne','open','tied','hex','exp','ref');
+print(" ");
+print(chr(ord())) for ('printf','each','return','local');
+print(" ");
+print(chr(ord())) for ('hex','alarm','chdir','kill','exec','return');
+</pre>
+And, just like that, I could see how it works.  The <code>ord()</code> gets the ASCII code of the first letter of it's input, and <code>chr()</code> turns the ASCII code back into a letter!  The <code>print(chr(ord()))</code> simply prints the first character of a string!  The code uses <code>for</code> to iterate over a list of keywords, and prints the first letters of each of them!
+<pre>
+print(chr(ord())) for ('<span style="color:green;">j</span>oin','<span style="color:green;">u</span>se','<span style="color:green;">s</span>ub','<span style="color:green;">t</span>ied');
+print(" ");
+print(chr(ord())) for ('<span style="color:green;">a</span>bs','<span style="color:green;">n</span>e','<span style="color:green;">o</span>pen','<span style="color:green;">t</span>ied','<span style="color:green;">h</span>ex','<span style="color:green;">e</span>xp','<span style="color:green;">r</span>ef');
+print(" ");
+print(chr(ord())) for ('<span style="color:green;">p</span>rintf','<span style="color:green;">e</span>ach','<span style="color:green;">r</span>eturn','<span style="color:green;">l</span>ocal');
+print(" ");
+print(chr(ord())) for ('<span style="color:green;">h</span>ex','<span style="color:green;">a</span>larm','<span style="color:green;">c</span>hdir','<span style="color:green;">k</span>ill','<span style="color:green;">e</span>xec','<span style="color:green;">r</span>eturn');
+</pre>
+<span style="color:green;">just another perl hacker</span>
+</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+let
+sub = ((\f.f f)(\f.(\a.\b.I(iszero b)(a)(f f(pred a)(pred b)))));
+equal = (\a.\b.(iszero(sub(a)(b))));
+and = (\p.\q.p q fal);
+not = (\q.q fal tru);
+CDR = (\p.p fal);
+LEQ = (\m.\n.iszero(sub m n));
+LT = (\a.\b.not(LEQ b a));
+DIV = (Y (\g.\q.\a.\b. LT a b (pair q a) (g (succ q) (sub a b) b)) zero);
+mod = (\a.\b.CDR(DIV a b));
+isprime = ((\f.f f)(\f.(\i.\d.I(equal(i)(d))(tru)(and(not(iszero(mod i d)))(f f(i)(succ d))))));
+in
+(\f.f f)(\f.\i.pair(isprime(i))(f f(succ(i))))
