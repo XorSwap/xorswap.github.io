@@ -1,6 +1,5 @@
 @font-face {
 	font-family: FixedSys;
-	font-weight: bold;
 	src: url('fixedsys.ttf');
 }
 body {
@@ -15,4 +14,5 @@ a {
 a:hover {
 	background-color: #FFFF55; /* yellowish */
 	color: black;
+	font-weight: bold;
 }
