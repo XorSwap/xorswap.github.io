@@ -5,6 +5,9 @@
 }
 body {
 	font-family: FixedSys;
-	color: darkGray;
+	color: #AAAAAA; /* light gray */
 	background-color: blue;/**/
+}
+a {
+	color: #FFFF55; /* yellowish */
 }
