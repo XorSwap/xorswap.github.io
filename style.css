@@ -10,9 +10,9 @@ body {
 a {
 	color: #FFFF55; /* yellowish */
 	text-decoration: none;
+	font-weight: bold;
 }
 a:hover {
 	background-color: #FFFF55; /* yellowish */
 	color: black;
-	font-weight: bold;
 }
